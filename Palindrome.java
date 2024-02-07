@@ -1,23 +1,26 @@
+package HackerRank;
+
+import java.util.Scanner;
 
 public class Palindrome {
-	public static boolean palindromeCheck(String Word) {
-		StringBuilder outBuilder = new StringBuilder();
-		char [] myArray=Word.toCharArray();
-		
-		for(int i = myArray.length-1; i>=0; i--) {
-			outBuilder.append(myArray[i]);
-		}
-		
-		if(Word.equals(outBuilder.toString())) {
-			return true;
-		}else {
-			return false;
-		}
-		
-	}
-	public static void main(String[] args) {
-		System.out.println(palindromeCheck("Oshadi"));
 
-	}
+	 public static void main(String[] args) {
+	        
+	        Scanner sc=new Scanner(System.in);
+	        String A=sc.next();
+	        sc.close();
+	        /* Enter your code here. Print output to STDOUT. */
+	        StringBuilder str = new StringBuilder();
+	        char [] ch = A.toCharArray();
+	        for(int i = 0;i<ch.length; i++){
+	            str.append(ch[ch.length-i-1]);
+	        }
+	        if(str.toString().equals(A)){
+	            System.out.println("Yes");
+	        }else{
+	            System.out.println("No");
+	        }
+	        
+	    }
 
 }
